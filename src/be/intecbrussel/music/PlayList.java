@@ -1,6 +1,7 @@
 package be.intecbrussel.music;
 
 import java.util.Comparator;
+import java.util.TreeSet;
 
 public class PlayList implements Comparator<Song>{
 
@@ -64,9 +65,7 @@ public class PlayList implements Comparator<Song>{
 
 	}
 
-	public void sort(Comparator<Song> customSongComparator) {
-
-	}
+	
 
 	@Override
 	public int compare(Song o1, Song o2) {
@@ -103,5 +102,9 @@ public class PlayList implements Comparator<Song>{
 		} else if (!playList.equals(other.playList))
 			return false;
 		return true;
+	}
+	
+	public void sort(Comparator<Song> customSongComparator) {
+		System.out.println(new TreeSet<Song>(customSongComparator));
 	}
 }
