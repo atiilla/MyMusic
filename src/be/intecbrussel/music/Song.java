@@ -1,6 +1,8 @@
 package be.intecbrussel.music;
 
-public class Song {
+import java.util.SortedSet;
+
+public class Song{
 
 	private String title;
 	private String artist;
@@ -8,11 +10,11 @@ public class Song {
 	private int playingTime;
 
 	public Song() {
-		super();
+		this("","","",0);
 	}
 
 	public Song(String title, String artist, String album, int playingTime) {
-		super();
+		
 		this.title = title;
 		this.artist = artist;
 		this.album = album;
