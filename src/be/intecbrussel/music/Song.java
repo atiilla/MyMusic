@@ -8,13 +8,14 @@ public class Song{
 	private String artist;
 	private String album;
 	private int playingTime;
+	
 
 	public Song() {
 		this("","","",0);
 	}
 
 	public Song(String title, String artist, String album, int playingTime) {
-		
+		super();
 		this.title = title;
 		this.artist = artist;
 		this.album = album;
