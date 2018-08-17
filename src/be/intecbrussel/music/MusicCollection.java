@@ -1,48 +1,86 @@
 package be.intecbrussel.music;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicCollection {
 
-	private String muzikCollection;
-	private String playListsinMusicCollection;
-	private Song song;
+	private String name;
+	private List<PlayList> playlists = new ArrayList<>();
 
-	public MusicCollection() {
+	public MusicCollection(String name, List<PlayList> playlists) {
 		super();
+		this.name = name;
+		this.playlists = playlists;
 	}
 
-	public MusicCollection(String muzikCollection, String playListsinMusicCollection) {
-		super();
-		this.muzikCollection = muzikCollection;
-		this.playListsinMusicCollection = playListsinMusicCollection;
+	public void addSongToPlayList(String playListName, Song song) {
+		PlayList playlist = searchForPlayList(playListName);
+		if(playlist!=null) {
+			
+		}
+		
 	}
 
-	public void addSongToPlayList(String playListName, Song songObj) {
+	private PlayList searchForPlayList(String playListName) {
+		for (PlayList playList : playlists) {
+			if(playList.getName().equals(playListName)) {
+				return playList;
+			}
+		}
+		return null;
+	}
+
+	public void removeSongFromPlayList(String playListName, Song song) {
+		PlayList playlist = searchForPlayList(playListName)
+		for (PlayList playList : playlists) {
+			if(playList.getName().equals(playListName)) {
+				playList.removeSong(song);
+			}
+		}
 
 	}
 
-	public void removeSongFromPlayList(String playListName, Song songObj) {
+	public void addPlayList(PlayList playList) {
+		
+		playlists.add(playList);
 
 	}
 
-	public void addPlayList(PlayList playlistObj) {
-
-	}
-
-	public void removePlayList(PlayList playlistObj) {
-
+	public void removePlayList(PlayList playList) {
+		playlists.remove(playList);
 	}
 
 	public int countOfPlaylistsInCollection() {
-		return 0;
+		
+		return playlists.size();
 
 	}
 
 	public int countsOfSongInPlayList(String playlistName) {
+		PlayList playlist = searchForPlayList(playlistName);
+		if(playlist!=null) {
+			return playlist.countOfPlaylist();
+		}
 		return 0;
+		
+		}
+		
 
+	
+
+	public void diplayPlayListsInCollection() {
+		for (PlayList playList : playlists) {
+			System.out.println(playList);
+		}
 	}
-
 	public void displaySongsFromPlaylist(String playlistName) {
+		for (PlayList playList : playlists) {
+			if(playList.getName().equals(playlistName)) {
+				playList.addSong(song);
+			}
+		}
+		
 
 	}
 

@@ -14,6 +14,20 @@ public class MusicApp {
 		Song song3 = new Song ("SongName3","Artist3","Album",20);
 		Song song4 = new Song ("SongName4","Artist4","Album",20);
 		
+		PlayList playlist1 = new PlayList("PlayList Name");
+		playlist1.addSong(song1);
+		playlist1.addSong(song2);
+		playlist1.addSong(song3);
+		playlist1.addSong(song4);
+		
+		playlist1.displayPlaylist();
+		
+		
+		System.out.println("\\ sortByName\n ");
+		
+		
+		System.out.println("\\ countOfPlaylist : " + playlist1.countOfPlaylist());
+		
 		
 
 	}

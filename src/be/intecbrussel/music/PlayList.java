@@ -79,7 +79,8 @@ public class PlayList {
 
 		@Override
 		public int compare(Song song1, Song song2) {
-			return ((Integer)song1.getPlayingTime()).compareTo(song2.getPlayingTime());
+			
+			return ((Integer)song1.getPlayingTime() - song2.getPlayingTime());
 		
 		}
 		
